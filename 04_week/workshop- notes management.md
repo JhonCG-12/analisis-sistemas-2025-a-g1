@@ -8,8 +8,8 @@ Este documento presenta el diseño e implementación de un sistema de gestión d
 
 ## 🔎 Requerimientos Funcionales (RF)
 
-### **RF1: Registro de Datos Básicos de los Usuarios**
-**Descripción:** Se requiere registrar los datos básicos de los futuros usuarios del sistema. Los datos incluyen:
+### *RF1: Registro de Datos Básicos de los Usuarios*
+*Descripción:* Se requiere registrar los datos básicos de los futuros usuarios del sistema. Los datos incluyen:
 - Nombre
 - Fecha de nacimiento
 - Correo electrónico
@@ -17,77 +17,77 @@ Este documento presenta el diseño e implementación de un sistema de gestión d
 - Número de documento
 - Teléfono
 
-**Flujo:**
-1. Ingresar al formulario `Registro de Personas`.
+*Flujo:*
+1. Ingresar al formulario Registro de Personas.
 2. Diligenciar los datos solicitados.
 3. Confirmar el registro.
 
-**Precondiciones:**
+*Precondiciones:*
 - El usuario administrador debe estar autenticado.
 
-**Postcondiciones:**
+*Postcondiciones:*
 - El sistema debe verificar que la persona no esté previamente registrada.
 
-**RF Ref:** N/A
+*RF Ref:* N/A
 
-### **RF2: Registro de Historia Clínica de los Pacientes**
-**Descripción:** Se requiere registrar la historia clínica de los pacientes en el sistema, vinculándola a su registro de persona (RF1).
+### *RF2: Registro de Historia Clínica de los Pacientes*
+*Descripción:* Se requiere registrar la historia clínica de los pacientes en el sistema, vinculándola a su registro de persona (RF1).
 
-**Campos de entrada:**
+*Campos de entrada:*
 - Historia clínica
 
-**Flujo:**
-1. Ingresar al formulario `Registro de Historia Clínica`.
+*Flujo:*
+1. Ingresar al formulario Registro de Historia Clínica.
 2. Diligenciar la historia clínica del paciente.
 3. Confirmar el registro.
 
-**Precondiciones:**
+*Precondiciones:*
 - El usuario administrador debe estar autenticado.
 - El paciente debe estar registrado en el sistema (RF1).
 
-**Postcondiciones:**
+*Postcondiciones:*
 - La historia clínica queda asociada al paciente registrado.
 
-**RF Ref:** RF1
+*RF Ref:* RF1
 
-### **RF3: Gestión de Citas Médicas**
-**Descripción:** Permitir la asignación, modificación y cancelación de citas a través del sistema.
+### *RF3: Gestión de Citas Médicas*
+*Descripción:* Permitir la asignación, modificación y cancelación de citas a través del sistema.
 
-**Flujo:**
+*Flujo:*
 1. Escoger el servicio médico.
 2. Seleccionar el paciente.
 3. Elegir al médico y el horario disponible.
 4. Confirmar la cita.
 
-**Precondiciones:**
+*Precondiciones:*
 - El paciente y el médico deben estar registrados en el sistema.
 - El servicio debe estar disponible.
 
-**Postcondiciones:**
+*Postcondiciones:*
 - La cita queda registrada y notificada a las partes involucradas.
 
-**RF Ref:** RF1, RF2
+*RF Ref:* RF1, RF2
 
-### **RF4: Notificaciones y Recordatorios de Citas**
-**Descripción:** Enviar alertas automáticas a los pacientes y médicos sobre sus citas.
+### *RF4: Notificaciones y Recordatorios de Citas*
+*Descripción:* Enviar alertas automáticas a los pacientes y médicos sobre sus citas.
 
-**Flujo:**
+*Flujo:*
 1. El sistema genera recordatorios de citas mediante correo o SMS.
 2. Se envían confirmaciones y cancelaciones de citas.
 
-**Precondiciones:**
+*Precondiciones:*
 - La cita debe estar registrada en el sistema.
 
-**Postcondiciones:**
+*Postcondiciones:*
 - Se reducen las inasistencias y los tiempos de espera.
 
-**RF Ref:** RF3
+*RF Ref:* RF3
 
 ---
 
 ## 📌 Entidades Clave en el Sistema
 
-### **📍 Pacientes**
+### *📍 Pacientes*
 - Nombre
 - Fecha de nacimiento
 - Correo electrónico
@@ -95,7 +95,7 @@ Este documento presenta el diseño e implementación de un sistema de gestión d
 - Teléfono
 - Historial médico
 
-### **📍 Médicos**
+### *📍 Médicos*
 - Nombre
 - Fecha de nacimiento
 - Correo electrónico
@@ -105,12 +105,12 @@ Este documento presenta el diseño e implementación de un sistema de gestión d
 - Fecha de vinculación
 - Especialidad
 
-### **📍 Servicios Médicos**
+### *📍 Servicios Médicos*
 - Nombre del servicio
 - Descripción del servicio
 - Tiempo requerido por el servicio
 
-### **📍 Citas Médicas**
+### *📍 Citas Médicas*
 - Servicio seleccionado
 - Paciente asignado
 - Médico asignado
@@ -150,10 +150,10 @@ El sistema actual presenta una serie de deficiencias que afectan tanto al person
 ### 3.1. Características del Nuevo Sistema
 El sistema propuesto contará con las siguientes funcionalidades clave:
 
-- **Plataforma en Línea:** Permite a los pacientes agendar, cancelar o reprogramar citas desde cualquier dispositivo.
-- **Calendario Digital Sincronizado:** Evita errores de doble reserva y conflictos de horarios.
-- **Notificaciones Automáticas:** Reduce la tasa de inasistencia mediante recordatorios por SMS o correo.
-- **Reportes y Análisis de Datos:** Permite evaluar la eficiencia del sistema y ajustar procesos.
+- *Plataforma en Línea:* Permite a los pacientes agendar, cancelar o reprogramar citas desde cualquier dispositivo.
+- *Calendario Digital Sincronizado:* Evita errores de doble reserva y conflictos de horarios.
+- *Notificaciones Automáticas:* Reduce la tasa de inasistencia mediante recordatorios por SMS o correo.
+- *Reportes y Análisis de Datos:* Permite evaluar la eficiencia del sistema y ajustar procesos.
 
 ---
 
